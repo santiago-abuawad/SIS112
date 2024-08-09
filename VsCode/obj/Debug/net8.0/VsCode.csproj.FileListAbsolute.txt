@@ -1,0 +1,15 @@
+C:\UCB\Documents\GitHub\SIS112\VsCode\bin\Debug\net8.0\VsCode.exe
+C:\UCB\Documents\GitHub\SIS112\VsCode\bin\Debug\net8.0\VsCode.deps.json
+C:\UCB\Documents\GitHub\SIS112\VsCode\bin\Debug\net8.0\VsCode.runtimeconfig.json
+C:\UCB\Documents\GitHub\SIS112\VsCode\bin\Debug\net8.0\VsCode.dll
+C:\UCB\Documents\GitHub\SIS112\VsCode\bin\Debug\net8.0\VsCode.pdb
+C:\UCB\Documents\GitHub\SIS112\VsCode\obj\Debug\net8.0\VsCode.GeneratedMSBuildEditorConfig.editorconfig
+C:\UCB\Documents\GitHub\SIS112\VsCode\obj\Debug\net8.0\VsCode.AssemblyInfoInputs.cache
+C:\UCB\Documents\GitHub\SIS112\VsCode\obj\Debug\net8.0\VsCode.AssemblyInfo.cs
+C:\UCB\Documents\GitHub\SIS112\VsCode\obj\Debug\net8.0\VsCode.csproj.CoreCompileInputs.cache
+C:\UCB\Documents\GitHub\SIS112\VsCode\obj\Debug\net8.0\VsCode.sourcelink.json
+C:\UCB\Documents\GitHub\SIS112\VsCode\obj\Debug\net8.0\VsCode.dll
+C:\UCB\Documents\GitHub\SIS112\VsCode\obj\Debug\net8.0\refint\VsCode.dll
+C:\UCB\Documents\GitHub\SIS112\VsCode\obj\Debug\net8.0\VsCode.pdb
+C:\UCB\Documents\GitHub\SIS112\VsCode\obj\Debug\net8.0\VsCode.genruntimeconfig.cache
+C:\UCB\Documents\GitHub\SIS112\VsCode\obj\Debug\net8.0\ref\VsCode.dll

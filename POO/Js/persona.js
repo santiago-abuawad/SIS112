@@ -20,13 +20,13 @@ class Persona {
   Universidad(){
     return 'Estoy en la ' + this.universidad + ' la universidad con convenio con mas de 300 paises. ';
   }
-  EliminarSaludo(){
+  EliminarSaludar(){
     this.nombre = undefined;
   }
-  EliminarEdad(){
+  Eliminarcumpleanios(){
     this.edad = undefined;
   }
-  EliminarCarrera(){
+  EliminarEstudiar(){
     this.carrera = undefined;
   }
   EliminarUniversidad(){
@@ -43,7 +43,7 @@ const edad = document.getElementById('edad');
 const carrera = document.getElementById('carrera');
 const universidad = document.getElementById('universidad');
 
-//Crear saludos, edad, carrera, univerisdad
+//Creacion de botones
 function botonSaludar() {
   saludar.textContent = persona.saludar();
 }
@@ -58,4 +58,62 @@ function botonEstudiar() {
 function botonUniversidad() {
   universidad.textContent = persona.Universidad();
 }
-//Modificar saludo, edad, carrera, universidad
+
+//Modificar botones 
+function validarTexto(input) {
+  return /^[A-Za-z\s]+$/.test(input);
+}
+function validarEdad(input) {
+  const numero = Number(input);
+  return !isNaN(numero) && numero >= 0;
+}
+function botonModificarSaludar() {
+  let nuevoNombre = prompt('Ingresa tu nueva identidad:');
+  if (nuevoNombre !== null && validarTexto(nuevoNombre)) {
+    persona.nombre = nuevoNombre;
+    saludar.textContent = persona.saludar();
+  } else {
+    alert('No existe nombres en numeros.');
+  }
+}
+function botonModificarCumpleanios() {
+  let nuevaEdad = prompt('Pone tu nueva edad guap@:');
+  if (nuevaEdad !== null && validarEdad(nuevaEdad)) {
+    persona.edad = nuevaEdad;
+    edad.textContent = persona.cumpleanios();
+  } else {
+    alert('Esa edad no existe, tontito.');
+  }
+}
+function botonModificarEstudiar() {
+  let nuevaCarrera = prompt('Ingresa la nueva carrera:');
+  if (nuevaCarrera !== null && validarTexto(nuevaCarrera)) {
+    persona.carrera = nuevaCarrera;
+    carrera.textContent = persona.estudiar();
+  } else {
+    alert('Por favor, ingresa una carrera válida sin números.');
+  }
+}
+function botonModificarUniversidad() {
+  let nuevaUniversidad = prompt('Ingresa la nueva universidad:');
+  if (nuevaUniversidad !== null && validarTexto(nuevaUniversidad)) {
+    persona.universidad = nuevaUniversidad;
+    universidad.textContent = persona.Universidad();
+  } else {
+    alert('Por favor, ingresa una universidad válida sin números.');
+  }
+}
+
+//Eliminar botones
+function BotonEliminarSaludar(){
+  saludar.textContent = ''
+}
+function BotonEliminarCumpleanios(){
+  edad.textContent = ''
+}
+function BotonEliminarEstudiar(){
+  carrera.textContent = ''
+}
+function BotonEliminarUniversidad(){
+  universidad.textContent = ''
+}

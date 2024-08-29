@@ -18,7 +18,7 @@ class Persona {
     return 'Estoy estudiando ' + this.carrera;
   }
   Universidad(){
-    return 'Estoy en la ' + this.universidad + ' la universidad con convenio con mas de 300 paises. ';
+    return 'Estoy en la ' + this.universidad + ' ,la universidad con convenio con mas de 300 paises. ';
   }
   EliminarSaludar(){
     this.nombre = undefined;
@@ -73,9 +73,14 @@ function botonModificarSaludar() {
     persona.nombre = nuevoNombre;
     saludar.textContent = persona.saludar();
   } else {
-    alert('No existe nombres en numeros.');
+    alert('Por favor, no existen nombres en numeros');
   }
 }
+
+function validarTexto(input) {
+  return /^[A-Za-z\s]+$/.test(input);
+}
+
 function botonModificarCumpleanios() {
   let nuevaEdad = prompt('Pone tu nueva edad guap@:');
   if (nuevaEdad !== null && validarEdad(nuevaEdad)) {
@@ -86,21 +91,21 @@ function botonModificarCumpleanios() {
   }
 }
 function botonModificarEstudiar() {
-  let nuevaCarrera = prompt('Ingresa la nueva carrera:');
+  let nuevaCarrera = prompt('Ingresa a la carrera de segunda opcion:');
   if (nuevaCarrera !== null && validarTexto(nuevaCarrera)) {
     persona.carrera = nuevaCarrera;
     carrera.textContent = persona.estudiar();
   } else {
-    alert('Por favor, ingresa una carrera válida sin números.');
+    alert('Por favor, ingresa una carrera real.');
   }
 }
 function botonModificarUniversidad() {
-  let nuevaUniversidad = prompt('Ingresa la nueva universidad:');
+  let nuevaUniversidad = prompt('Ingresa la nueva universidad y porque la gabriel:');
   if (nuevaUniversidad !== null && validarTexto(nuevaUniversidad)) {
     persona.universidad = nuevaUniversidad;
     universidad.textContent = persona.Universidad();
   } else {
-    alert('Por favor, ingresa una universidad válida sin números.');
+    alert('Por favor, no te hagas y pone la gabriel yo se que si.');
   }
 }
 

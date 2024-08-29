@@ -20,6 +20,18 @@ class Persona {
   Universidad(){
     return 'Estoy en la ' + this.universidad + ' la universidad con convenio con mas de 300 paises. ';
   }
+  EliminarSaludo(){
+    this.nombre = undefined;
+  }
+  EliminarEdad(){
+    this.edad = undefined;
+  }
+  EliminarCarrera(){
+    this.carrera = undefined;
+  }
+  EliminarUniversidad(){
+    this.universidad = undefined;
+  }
 }
 
 // Crear una instancia de la clase Persona
@@ -31,22 +43,19 @@ const edad = document.getElementById('edad');
 const carrera = document.getElementById('carrera');
 const universidad = document.getElementById('universidad');
 
-// Función para saludar
+//Crear saludos, edad, carrera, univerisdad
 function botonSaludar() {
   saludar.textContent = persona.saludar();
 }
 
-// Función para cumpleaños
 function botonCumpleanios() {
   edad.textContent = persona.cumpleanios();
 }
 
-// Función para estudiar
 function botonEstudiar() {
   carrera.textContent = persona.estudiar();
 }
-
-// Función para universidad
 function botonUniversidad() {
   universidad.textContent = persona.Universidad();
 }
+//Modificar saludo, edad, carrera, universidad

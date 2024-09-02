@@ -18,7 +18,7 @@ class Persona {
     return 'Estoy estudiando ' + this.carrera;
   }
   Universidad(){
-    return 'Estoy en la ' + this.universidad + ' ,la universidad con convenio con mas de 300 paises. ';
+    return 'Estoy en la ' + this.universidad + ', la universidad con mayor prestigio. ';
   }
   EliminarSaludar(){
     this.nombre = undefined;

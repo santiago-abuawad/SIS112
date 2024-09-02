@@ -66,50 +66,106 @@ def validar_edad(input_text):
         return False, "Por favor, ingresa un número válido."
 
 
+def crear_nombre(persona):
+    while True:
+        nuevo_nombre = input("Ingresa tu nombre:")
+        if validar_texto(nuevo_nombre):
+            persona.nombre = nuevo_nombre
+            print(persona.saludar())
+            break
+        else:
+            print("Por favor, no ingreses caracteres especiales ni números.")
+
+
+def crear_edad(persona):
+    while True:
+        nueva_edad = input("Ingresa tu edad:")
+        es_valido, mensaje = validar_edad(nueva_edad)
+        if es_valido:
+            persona.edad = nueva_edad
+            print(persona.cumpleanios())
+            break
+        else:
+            print(mensaje)
+
+
+def crear_carrera(persona):
+    while True:
+        nueva_carrera = input("Ingresa tu carrera:")
+        if validar_texto(nueva_carrera):
+            persona.carrera = nueva_carrera
+            print(persona.estudiar())
+            break
+        else:
+            print("Por favor, no ingreses caracteres especiales ni números.")
+
+
+def crear_universidad(persona):
+    while True:
+        nueva_universidad = input("Ingresa tu universidad:")
+        if validar_texto(nueva_universidad):
+            persona.universidad = nueva_universidad
+            print(persona.universidad_info())
+            break
+        else:
+            print("Por favor, no ingreses caracteres especiales ni números.")
+
+
 def modificar_nombre(persona):
-    if persona.nombre is None:
-        return "Error: Primero debes crear un nombre."
-    nuevo_nombre = input("Ingresa tu nueva identidad:")
-    if validar_texto(nuevo_nombre):
-        persona.nombre = nuevo_nombre
-        return persona.saludar()
-    else:
-        return "Por favor, no ingreses caracteres especiales ni números."
+    while True:
+        if persona.nombre is None:
+            print("Error: Primero debes crear un nombre.")
+            return
+        nuevo_nombre = input("Ingresa tu nueva identidad:")
+        if validar_texto(nuevo_nombre):
+            persona.nombre = nuevo_nombre
+            print(persona.saludar())
+            break
+        else:
+            print("Por favor, no ingreses caracteres especiales ni números.")
 
 
 def modificar_edad(persona):
-    if persona.edad is None:
-        return "Error: Primero debes crear la edad."
     while True:
+        if persona.edad is None:
+            print("Error: Primero debes crear la edad.")
+            return
         nueva_edad = input("Ingresa tu nueva edad:")
         es_valido, mensaje = validar_edad(nueva_edad)
         if es_valido:
             persona.edad = nueva_edad
-            return persona.cumpleanios()
+            print(persona.cumpleanios())
+            break
         else:
             print(mensaje)
 
 
 def modificar_carrera(persona):
-    if persona.carrera is None:
-        return "Error: Primero debes crear la carrera."
-    nueva_carrera = input("Ingresa la nueva carrera:")
-    if validar_texto(nueva_carrera):
-        persona.carrera = nueva_carrera
-        return persona.estudiar()
-    else:
-        return "Por favor, no ingreses caracteres especiales ni números."
+    while True:
+        if persona.carrera is None:
+            print("Error: Primero debes crear la carrera.")
+            return
+        nueva_carrera = input("Ingresa la nueva carrera:")
+        if validar_texto(nueva_carrera):
+            persona.carrera = nueva_carrera
+            print(persona.estudiar())
+            break
+        else:
+            print("Por favor, no ingreses caracteres especiales ni números.")
 
 
 def modificar_universidad(persona):
-    if persona.universidad is None:
-        return "Error: Primero debes crear la universidad."
-    nueva_universidad = input("Ingresa la nueva universidad:")
-    if validar_texto(nueva_universidad):
-        persona.universidad = nueva_universidad
-        return persona.universidad_info()
-    else:
-        return "Por favor, no ingreses caracteres especiales ni números."
+    while True:
+        if persona.universidad is None:
+            print("Error: Primero debes crear la universidad.")
+            return
+        nueva_universidad = input("Ingresa la nueva universidad:")
+        if validar_texto(nueva_universidad):
+            persona.universidad = nueva_universidad
+            print(persona.universidad_info())
+            break
+        else:
+            print("Por favor, no ingreses caracteres especiales ni números.")
 
 
 def menu_persona():
@@ -122,18 +178,18 @@ def menu_persona():
         print(persona.estudiar())
         print(persona.universidad_info())
 
-        accion = input("\n¿Qué quieres hacer? (modificar/eliminar/finalizar): ").lower()
+        accion = input("\n¿Qué quieres hacer? (modificar/eliminar/crear/finalizar): ").lower()
 
         if accion == 'modificar':
             opcion = input("¿Qué quieres modificar? (nombre/edad/carrera/universidad): ").lower()
             if opcion == 'nombre':
-                print(modificar_nombre(persona))
+                modificar_nombre(persona)
             elif opcion == 'edad':
-                print(modificar_edad(persona))
+                modificar_edad(persona)
             elif opcion == 'carrera':
-                print(modificar_carrera(persona))
+                modificar_carrera(persona)
             elif opcion == 'universidad':
-                print(modificar_universidad(persona))
+                modificar_universidad(persona)
             else:
                 print("Opción no válida.")
 
@@ -150,9 +206,18 @@ def menu_persona():
             else:
                 print("Opción no válida.")
 
-        elif accion == 'finalizar':
-            print("Finalizando...")
-            break
+        elif accion == 'crear':
+            opcion = input("¿Qué quieres crear? (nombre/edad/carrera/universidad): ").lower()
+            if opcion == 'nombre':
+                crear_nombre(persona)
+            elif opcion == 'edad':
+                crear_edad(persona)
+            elif opcion == 'carrera':
+                crear_carrera(persona)
+            elif opcion == 'universidad':
+                crear_universidad(persona)
+            else:
+                print("Opción no válida.")
 
         else:
             print("Acción no válida. Por favor, intenta de nuevo.")

@@ -76,13 +76,13 @@ class Materia {
   }
   
   // Crear una instancia de la clase Materia
-  const materia1 = new materia('Victor Hugo Aspiazu', 'Calculo 1', '[Lunes 7:30-9:00, Miercoles 7:30-9:00]','10 A-N4', 'MAT-030', 'Ingeneria Industrial', 'UCB', 34);
-  const materia2 = new materia('Eddy Escalante', 'Programacion 1', '[Lunes 10:50-12:20, Viernes 10:50-11:35]', ' [C 2-2 (LAB. CÓMPUTO 5)]', 'SIS-112', 'Ingeniería Industrial', 'UCB', 16);
-  const materia3 = new materia('Victor Hugo Lobo', 'Fisica 1', '[Lunes 9:10-10:40, Miercoles 9:10-10:40]', '[E 2-5]', 'FIS-111', 'Ingeniería Industrial', 'UCB', 45);
-  const materia4 = new materia('Jorge Salvatierra','Manufactura y mecanizado', '[Martes 7:30-9:00- Jueves 7:30-9:00, Viernes 7:30-9:00]', '[12 AULA A-N4], [F 1-2 (LAB. PROCESOS)]', 'Ingeniería Industrial', 'UCB', 15);
-  const materia5 = new materia('Gabriela Exalta de la Barra','Antropologia Y valores', '[Martes 9:10-10:40, Jueves 9:10-10:40]', '[4 AULA A-N3], B 2-1', 'FHC-101','Ingeniería Industrial', 'UCB', 61);
-  const materia6 = new materia('Carmen Silvia Barca', 'Probabilidad y estadistica 1','[Martes 10:50-12:20, Jueves 10:50-12:20]','[D 2-1 (LAB. CÓMPUTO 2)]', 'Ingeniería Industrial', 'UCB', 33);
-  const materia7 = new materia('Roberto Carlos Alvarez', 'Laboratorio Fisica 1','[Miercoles 12:30- 13:15]', 'Ingeniería Industrial', 'UCB');
+  const materia1 = new Materia('Victor Hugo Aspiazu', 'Calculo 1', '[Lunes 7:30-9:00, Miercoles 7:30-9:00]','10 A-N4', 'MAT-030', 'Ingeneria Industrial', 'UCB', 34);
+  const materia2 = new Materia('Eddy Escalante', 'Programacion 1', '[Lunes 10:50-12:20, Viernes 10:50-11:35]', ' [C 2-2 (LAB. CÓMPUTO 5)]', 'SIS-112', 'Ingeniería Industrial', 'UCB', 16);
+  const materia3 = new Materia('Victor Hugo Lobo', 'Fisica 1', '[Lunes 9:10-10:40, Miercoles 9:10-10:40]', '[E 2-5]', 'FIS-111', 'Ingeniería Industrial', 'UCB', 45);
+  const materia4 = new Materia('Jorge Salvatierra','Manufactura y mecanizado', '[Martes 7:30-9:00- Jueves 7:30-9:00, Viernes 7:30-9:00]', '[12 AULA A-N4], [F 1-2 (LAB. PROCESOS)]', 'Ingeniería Industrial', 'UCB', 15);
+  const materia5 = new Materia('Gabriela Exalta de la Barra','Antropologia Y valores', '[Martes 9:10-10:40, Jueves 9:10-10:40]', '[4 AULA A-N3], B 2-1', 'FHC-101','Ingeniería Industrial', 'UCB', 61);
+  const materia6 = new Materia('Carmen Silvia Barca', 'Probabilidad y estadistica 1','[Martes 10:50-12:20, Jueves 10:50-12:20]','[D 2-1 (LAB. CÓMPUTO 2)]', 'Ingeniería Industrial', 'UCB', 33);
+  const materia7 = new Materia('Roberto Carlos Alvarez', 'Laboratorio Fisica 1','[Miercoles 12:30- 13:15]', 'Ingeniería Industrial', 'UCB');
   
   // Inicializar los elementos HTML
   const Nombre_De_Materia = document.getElementById('Nombre De Materia');
@@ -118,7 +118,7 @@ class Materia {
   }
 
   function botonUniverdad() {
-    Universidad.textContent = persona.();
+    Universidad.textContent = persona.universidad();
   }
   
   //Modificar botones 

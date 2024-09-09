@@ -12,28 +12,64 @@ class Materia {
     }
   
     nombreDemateria() { 
-      return '' + this.nombremateria;
+      return 'Esta es la materia: ' + this.nombremateria;
     }
   
-    cumpleanios() {
-      return '¡Felicidades! tienes ' + this.edad + ' años.';
+    Sigla() {
+      return 'La sigla de '+ this.nombremateira + 'es: ' + this.sigla;
     }
   
-    estudiar() {
-      return 'Estoy estudiando ' + this.carrera;
+    Docente() {
+      return 'El docente de '+ this.nombremateria + 'es' + this.docente;
     }
+    
+    Horario() {
+        return 'La hora de la que pasa la materia de '+ this.nombremateria + 'es' + this.horarios;
+    }
+    
+    Aula() {
+        return 'La aula de '+ this.nombremateria + 'es' + this.aula;
+    }
+    
+    Prerequisito() {
+        return 'El prerequisito de '+ this.nombremateria + 'es' + this.prerequisito;
+    }
+
+    CantidadDeInscritos() {
+        return 'La cantidad inscritos de '+ this.nombremateria + 'es' + this.cantidadInscritos;
+    }
+
     Universidad(){
       return 'Estoy en la ' + this.universidad + ', la universidad con mayor prestigio. ';
     }
-    EliminarSaludar(){
-      this.nombre = undefined;
+   
+   //Elminiar atributos
+    EliminarNombreMateria(){
+      this.nombremateria = undefined;
     }
-    Eliminarcumpleanios(){
-      this.edad = undefined;
+    EliminarSigla(){
+      this.sigla = undefined;
     }
-    EliminarEstudiar(){
-      this.carrera = undefined;
+    EliminarDocente(){
+      this.docente = undefined;
     }
+
+    EliminarHorario(){
+        this.horarios = undefined;
+    }
+
+    EliminarAula(){
+        this.aula = undefined;
+    }
+
+    EliminarPrequisitos(){
+        this.prerequisito = undefined;
+    }
+
+    EliminarCantidadDeInscritos(){
+        this.cantidadInscritos = undefined;
+    }
+
     EliminarUniversidad(){
       this.universidad = undefined;
     }
@@ -49,25 +85,40 @@ class Materia {
   const materia7 = new materia('Roberto Carlos Alvarez', 'Laboratorio Fisica 1','[Miercoles 12:30- 13:15]', 'Ingeniería Industrial', 'UCB');
   
   // Inicializar los elementos HTML
-  const saludar = document.getElementById('saludar');
-  const edad = document.getElementById('edad');
-  const carrera = document.getElementById('carrera');
-  const universidad = document.getElementById('universidad');
+  const Nombre_De_Materia = document.getElementById('Nombre De Materia');
+  const Sigla = document.getElementById('Sigla');
+  const Docente = document.getElementById('Docente');
+  const Horario = document.getElementById('Horarios');
+  const Aula = document.getElementById('Aula');
+  const Cantidad_De_Inscritos = document.getElementById('Cantidad de Inscritos');
+  const universidad = document.getElementById('Universidad');
   
   //Creacion de botones
-  function botonSaludar() {
-    saludar.textContent = persona.saludar();
+  function botonNombreMateria() {
+    nombreMateria.textContent = persona.nombreMateria();
   }
   
-  function botonCumpleanios() {
-    edad.textContent = persona.cumpleanios();
+  function botonSigla() {
+    sigla.textContent = persona.Sigla();
   }
   
-  function botonEstudiar() {
-    carrera.textContent = persona.estudiar();
+  function botonDocente() {
+    docente.textContent = persona.Docente();
   }
-  function botonUniversidad() {
-    universidad.textContent = persona.Universidad();
+  function botonHorario() {
+    horario.textContent = persona.Horario();
+  }
+
+  function botonAula() {
+    aula.textContent = persona.Aula();
+  }
+
+  function botonCantidadDeInscritos() {
+    cantidadInscritos.textContent = persona.CantidadDeInscritos();
+  }
+
+  function botonUniverdad() {
+    Universidad.textContent = persona.();
   }
   
   //Modificar botones 

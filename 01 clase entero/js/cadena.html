@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulación de Cadenas</title>
+    <script src="cadena.js" defer></script>
+</head>
+<body>
+    <h1>Manipulación de Cadenas</h1>
+    <div>
+        <label for="inputCadena">Ingrese una cadena:</label>
+        <input type="text" id="inputCadena">
+        <button onclick="crearCadena()">Crear Cadena</button>
+    </div>
+
+    <div>
+        <h2>Operaciones</h2>
+        <button onclick="concatenar()">Concatenar</button>
+        <input type="text" id="inputConcatenar" placeholder="Cadena a concatenar">
+        
+        <button onclick="invertir()">Invertir</button>
+        
+        <button onclick="verificarVacia()">¿Es vacía?</button>
+        
+        <button onclick="contiene()">¿Contiene?</button>
+        <input type="text" id="inputContiene" placeholder="Subcadena">
+        
+        <button onclick="comienzaCon()">¿Comienza con?</button>
+        <input type="text" id="inputComienzaCon" placeholder="Prefijo">
+        
+        <button onclick="terminaCon()">¿Termina con?</button>
+        <input type="text" id="inputTerminaCon" placeholder="Sufijo">
+        
+        <button onclick="mostrarLongitud()">Longitud</button>
+        
+        <button onclick="aMayusculas()">A Mayúsculas</button>
+        
+        <button onclick="aMinusculas()">A Minúsculas</button>
+    </div>
+
+    <div>
+        <h2>Resultados</h2>
+        <p id="resultado"></p>
+    </div>
+
+    <script>
+        let cadenaObj;
+
+        function crearCadena() {
+            const input = document.getElementById('inputCadena').value;
+            cadenaObj = new Cadena(input);
+            mostrarResultado(`Cadena creada: ${cadenaObj.getCadena()}`);
+        }
+
+        function concatenar() {
+            const otraCadena = document.getElementById('inputConcatenar').value;
+            cadenaObj.concaternar(otraCadena);
+            mostrarResultado(`Cadena después de concatenar: ${cadenaObj.getCadena()}`);
+        }
+
+        function invertir() {
+            cadenaObj.invertir();
+            mostrarResultado(`Cadena invertida: ${cadenaObj.getCadena()}`);
+        }
+
+        function verificarVacia() {
+            const esVacia = cadenaObj.esVacia();
+            mostrarResultado(`¿La cadena es vacía? ${esVacia}`);
+        }
+
+        function contiene() {
+            const subcadena = document.getElementById('inputContiene').value;
+            const resultado = cadenaObj.contiene(subcadena);
+            mostrarResultado(`¿Contiene "${subcadena}"? ${resultado}`);
+        }
+
+        function comienzaCon() {
+            const prefijo = document.getElementById('inputComienzaCon').value;
+            const resultado = cadenaObj.comienzaCon(prefijo);
+            mostrarResultado(`¿Comienza con "${prefijo}"? ${resultado}`);
+        }
+
+        function terminaCon() {
+            const sufijo = document.getElementById('inputTerminaCon').value;
+            const resultado = cadenaObj.terminaCon(sufijo);
+            mostrarResultado(`¿Termina con "${sufijo}"? ${resultado}`);
+        }
+
+        function mostrarLongitud() {
+            const longitud = cadenaObj.longitud();
+            mostrarResultado(`Longitud de la cadena: ${longitud}`);
+        }
+
+        function aMayusculas() {
+            const resultado = cadenaObj.aMayuscula();
+            mostrarResultado(`Cadena en mayúsculas: ${resultado}`);
+        }
+
+        function aMinusculas() {
+            const resultado = cadenaObj.aMinusculuas();
+            mostrarResultado(`Cadena en minúsculas: ${resultado}`);
+        }
+
+        function mostrarResultado(texto) {
+            document.getElementById('resultado').innerText = texto;
+        }
+    </script>
+</body>
+</html>

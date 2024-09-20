@@ -1,52 +1,97 @@
-class Cadena{
+class Cadena {
     constructor(cadena) {
-        this.cadena = cadena;
+      this.cadena = cadena;
     }
-
-    getCadena() {
-        return this.cadena;
+  
+    getCadena() { //Obtiene el valor asignado a la cadena
+      return this.cadena;
     }
-
-    //Manipulacion de cadenas
-    concaternar(otraCadena){ //Unir una cadena con otra cadena
-        this.cadena += otraCadena 
+  
+    // Manipulación de cadenas
+    concatenar(otraCadena) {  //Unir una cadena con otra
+      this.cadena += otraCadena;
     }
-
-    invertir(){ //Invertir kis caracteres de la cadena
-        let cadenaInvertida = "";
-        for (let i = this.cadena.leght - 1 >= 0; i--;) {
-            cadenaInvertida += this.cadena[i];
-        }
-        this.cadena = cadenaInvertida;
+  
+    invertir() { //Invertir los caracteres de la cadena
+      let cadenaInvertida = '';
+      for (let i = this.cadena.length - 1; i >= 0; i--) {
+        cadenaInvertida += this.cadena[i];
+      }
+      this.cadena = cadenaInvertida;
     }
-
-    //Comparaciones
+  
+    // Comparaciones
     esVacia() { //Compara si la cadena no tiene caracteres
-        return thi.cadena.leght === 0;
+      return this.cadena.length === 0;
     }
-
-    contiene(subcadena) { //Compara si la subcadena existe dentro de la cadena
-        return this.cadena.includes(subcadena);
+  
+    contiene(subcadena) { //Compara si la subCadena existe dentro de la cadena
+      return this.cadena.includes(subcadena);
     }
-
-    comienzaCon(prefijo) { // compara si la cadena comienza con el prefijo "caracter"
-        return this.cadena.startWith(prefijo);
+  
+    comienzaCon(prefijo) { //Compara si la cadena comienza con el prefijo "caracter"
+      return this.cadena.startsWith(prefijo);
     }
-
+  
     terminaCon(sufijo) { //Compara si la cadena termina con el sufijo "caracter"
-        return this.cadena.endWith(sufijo);
+      return this.cadena.endsWith(sufijo);
     }
-    
-    //Otras operaciones
-    longitud(){ //Obtiene la cantidad de caracteres que tiene la cadena
-        return this.cadena.length;
+  
+    // Otras operaciones
+    longitud() { //Obtiene la cantidad de caracteres que tiene la cadena
+      return this.cadena.length;
     }
-
-    aMayuscula(){ // Obtiene la cadena transfromada a Mayusculas
-        return this.cadena.toUpperCase();
+  
+    aMayusculas() { //Obtiene la cadena transformada en MAYUSCULA
+      return this.cadena.toUpperCase();
     }
-
-    aMinusculuas(){ // Obtiene la cadena transfromada a Minusculas
-        return this.cadena.toLowerCase();
+  
+    aMinusculas() { //Obtiene la cadena transformada en minuscula
+      return this.cadena.toLowerCase();
     }
-}
+  }
+  
+  let cadena = new Cadena('');
+  
+  function ejecutar(metodo) {
+    const input = document.getElementById('inputCadena');
+    const resultadoDiv = document.getElementById('resultado');
+    const valorInput = input.value;
+  
+    switch (metodo) {
+      case 'getCadena':
+        resultadoDiv.innerHTML = `Cadena: ${cadena.getCadena()}`;
+        break;
+      case 'concatenar':
+        cadena.concatenar(valorInput);
+        resultadoDiv.innerHTML = `Cadena actual: ${cadena.getCadena()}`;
+        break;
+      case 'invertir':
+        cadena.invertir();
+        resultadoDiv.innerHTML = `Cadena invertida: ${cadena.getCadena()}`;
+        break;
+      case 'esVacia':
+        resultadoDiv.innerHTML = `¿Es vacía?: ${cadena.esVacia()}`;
+        break;
+      case 'contiene':
+        resultadoDiv.innerHTML = `¿Contiene '${valorInput}'?: ${cadena.contiene(valorInput)}`;
+        break;
+      case 'comienzaCon':
+        resultadoDiv.innerHTML = `¿Comienza con '${valorInput}'?: ${cadena.comienzaCon(valorInput)}`;
+        break;
+      case 'terminaCon':
+        resultadoDiv.innerHTML = `¿Termina con '${valorInput}'?: ${cadena.terminaCon(valorInput)}`;
+        break;
+      case 'longitud':
+        resultadoDiv.innerHTML = `Longitud: ${cadena.longitud()}`;
+        break;
+      case 'aMayusculas':
+        resultadoDiv.innerHTML = `A mayúsculas: ${cadena.aMayusculas()}`;
+        break;
+      case 'aMinusculas':
+        resultadoDiv.innerHTML = `A minúsculas: ${cadena.aMinusculas()}`;
+        break;
+      default:
+        resultadoDiv.innerHTML = 'Método no reconocido.';
+    }
+  }

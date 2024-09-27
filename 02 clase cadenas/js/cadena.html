@@ -8,8 +8,8 @@
     <style>
         body {
             font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-            color: #fff;
+            background: linear-gradient(135deg, #e0f7fa, #b2ebf2);
+            color: #333;
             text-align: center;
             padding: 20px;
             min-height: 100vh;
@@ -20,10 +20,11 @@
             overflow-x: hidden;
         }
         h1 {
-            color: #ffffff;
-            font-size: 3em;
-            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+            font-size: 3.5em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
             margin-bottom: 30px;
+            animation: fadeInDown 0.5s;
+            color: #00796b;
         }
         input {
             padding: 15px;
@@ -36,9 +37,12 @@
             outline: none;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             transition: box-shadow 0.3s ease;
+            background-color: rgba(255, 255, 255, 0.8);
+            color: #333;
         }
         input:focus {
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            background-color: rgba(255, 255, 255, 1);
         }
         .button-container {
             display: flex;
@@ -47,7 +51,7 @@
             margin-top: 20px;
         }
         button {
-            background: linear-gradient(45deg, #ff0099, #493240);
+            background: linear-gradient(45deg, #4caf50, #388e3c);
             color: white;
             border: none;
             padding: 12px 25px;
@@ -58,32 +62,91 @@
             transition: all 0.3s ease;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
             outline: none;
+            position: relative;
+            overflow: hidden;
         }
         button:hover {
-            background: linear-gradient(45deg, #ff6a00, #ee0979);
+            background: linear-gradient(45deg, #66bb6a, #4caf50);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
             transform: translateY(-3px);
+        }
+        button::after {
+            content: '';
+            position: absolute;
+            width: 300%;
+            height: 300%;
+            top: 50%;
+            left: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            transition: all 0.4s ease;
+            transform: translate(-50%, -50%) scale(0);
+            z-index: 0;
+        }
+        button:hover::after {
+            transform: translate(-50%, -50%) scale(1);
         }
         #resultado {
             margin-top: 30px;
             padding: 20px;
-            border: 2px solid #4a90e2;
+            border: 2px solid #4caf50;
             border-radius: 15px;
             background-color: rgba(255, 255, 255, 0.1);
             width: 80%;
             max-width: 600px;
-            margin: 30px auto;
             font-size: 1.3em;
-            color: #fff;
+            color: #333;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeIn 0.5s;
         }
         #resultado:hover {
             transform: translateY(-5px);
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
         }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
     </style>
 </head>
+<body>
+
+    <h1>Manipulación de Cadenas</h1>
+    <input type="text" id="inputTexto" placeholder="Introduce un texto...">
+    <div class="button-container">
+        <button onclick="convertirTexto()">Convertir a ASCII</button>
+        <button onclick="convertirAscii()">Convertir a Texto</button>
+    </div>
+    <div id="resultado"></div>
+
+    <script>
+        function convertirTexto() {
+            const input = document.getElementById('inputTexto').value;
+            let resultado = '';
+            for (let char of input) {
+                resultado += char.charCodeAt(0) + ' ';
+            }
+            document.getElementById('resultado').innerText = resultado.trim();
+        }
+
+        function convertirAscii() {
+            const input = document.getElementById('inputTexto').value;
+            const numeros = input.split(' ');
+            let resultado = '';
+            for (let num of numeros) {
+                resultado += String.fromCharCode(num) + '';
+            }
+            document.getElementById('resultado').innerText = resultado.trim();
+        }
+    </script>
+
+</body>
+</html>
 <body>
 
     <h1>Manipulación de Cadenas</h1>

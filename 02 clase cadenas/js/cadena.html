@@ -4,42 +4,83 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manipulación de Cadenas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f8ff;
-            color: #333;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: #fff;
             text-align: center;
             padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow-x: hidden;
         }
         h1 {
-            color: #4a90e2;
-        }
-        button {
-            background-color: #4caf50;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            margin: 5px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        button:hover {
-            background-color: #45a049;
-        }
-        #resultado {
-            margin-top: 20px;
-            padding: 15px;
-            border: 2px solid #4a90e2;
-            border-radius: 5px;
-            background-color: #e7f3fe;
+            color: #ffffff;
+            font-size: 3em;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+            margin-bottom: 30px;
         }
         input {
-            padding: 10px;
-            margin: 5px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
+            padding: 15px;
+            margin: 10px 0;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 30px;
+            border: none;
+            font-size: 1.1em;
+            outline: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: box-shadow 0.3s ease;
+        }
+        input:focus {
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        button {
+            background: linear-gradient(45deg, #ff0099, #493240);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            margin: 10px;
+            border-radius: 50px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            outline: none;
+        }
+        button:hover {
+            background: linear-gradient(45deg, #ff6a00, #ee0979);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            transform: translateY(-3px);
+        }
+        #resultado {
+            margin-top: 30px;
+            padding: 20px;
+            border: 2px solid #4a90e2;
+            border-radius: 15px;
+            background-color: rgba(255, 255, 255, 0.1);
+            width: 80%;
+            max-width: 600px;
+            margin: 30px auto;
+            font-size: 1.3em;
+            color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        #resultado:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
         }
     </style>
 </head>
@@ -47,22 +88,27 @@
 
     <h1>Manipulación de Cadenas</h1>
     
-    <input type="text" id="inputCadena" placeholder="Introduce una cadena" />
+    <input type="text" id="inputCadena" placeholder="Introduce una cadena o número" />
     
-    <button onclick="ejecutar('getCadena')">Obtener Cadena</button>
-    <button onclick="ejecutar('concatenar')">Concatenar</button>
-    <button onclick="ejecutar('invertir')">Invertir</button>
-    <button onclick="ejecutar('esVacia')">¿Es Vacía?</button>
-    <button onclick="ejecutar('contiene')">Contiene Subcadena</button>
-    <button onclick="ejecutar('comienzaCon')">Comienza Con</button>
-    <button onclick="ejecutar('terminaCon')">Termina Con</button>
-    <button onclick="ejecutar('longitud')">Longitud</button>
-    <button onclick="ejecutar('aMayusculas')">A Mayúsculas</button>
-    <button onclick="ejecutar('aMinusculas')">A Minúsculas</button>
+    <div class="button-container">
+        <button onclick="ejecutar('getCadena')">Obtener Cadena</button>
+        <button onclick="ejecutar('concatenar')">Concatenar</button>
+        <button onclick="ejecutar('invertir')">Invertir</button>
+        <button onclick="ejecutar('esVacia')">¿Es Vacía?</button>
+        <button onclick="ejecutar('contiene')">Contiene Subcadena</button>
+        <button onclick="ejecutar('comienzaCon')">Comienza Con</button>
+        <button onclick="ejecutar('terminaCon')">Termina Con</button>
+        <button onclick="ejecutar('longitud')">Longitud</button>
+        <button onclick="ejecutar('aMayusculas')">A Mayúsculas</button>
+        <button onclick="ejecutar('aMinusculas')">A Minúsculas</button>
+        <button onclick="ejecutar('numeroARomano')">Número a Romano</button>
+        <button onclick="ejecutar('generarTextoAleatorio')">Generar Texto Aleatorio</button>
+        <button onclick="ejecutar('asciiATexto')">ASCII a Texto</button>
+    </div>
 
     <div id="resultado"></div>
 
-    <!-- Incluir el archivo JavaScript -->
+    <!-- Asegúrate de que el script "cadena.js" tenga el código correcto -->
     <script src="cadena.js"></script>
 </body>
 </html>

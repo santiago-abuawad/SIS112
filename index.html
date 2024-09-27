@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mateo Pommier</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #eaeaea; /* Color neutro */
+        }
+        header {
+            background-color: #37474F; /* Color gris oscuro */
+            color: white;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #455A64; /* Color gris medio */
+            padding: 10px 0;
+        }
+        nav a {
+            background: linear-gradient(90deg, rgba(255, 0, 150, 1), rgba(0, 204, 255, 1));
+            color: white;
+            padding: 12px 18px;
+            text-decoration: none;
+            text-align: center;
+            border-radius: 5px;
+            margin: 5px;
+            transition: background 0.3s, transform 0.3s;
+        }
+        nav a:hover {
+            background: linear-gradient(90deg, rgba(0, 204, 255, 1), rgba(255, 0, 150, 1));
+            transform: scale(1.05);
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        .card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            margin: 10px 0;
+            padding: 20px;
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #37474F; /* Color gris oscuro */
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .info {
+            background: #fff;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        @media (max-width: 600px) {
+            nav {
+                flex-direction: column;
+            }
+            nav a {
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Welcome to my codigos en js y html</h1>
+</header>
+
+<nav>
+    <a href="http://pommier-ucb.somee.com/cadena.html">Cadena</a>
+    <a href="http://pommier-ucb.somee.com/lista-enteros.html">Lista Enteros</a>
+    <a href="http://pommier-ucb.somee.com/entero.html">Entero</a>
+</nav>
+
+<div class="container">
+    <h2>Mis datos personales</h2>
+    <div class="info">
+        <p><strong>Nombre:</strong> Mateo Pommier</p>
+        <p><strong>Carrera:</strong> Industrial</p>
+        <p><strong>Universidad:</strong> UCB</p>
+        <p><strong>Asignatura:</strong> Programación 1</p>
+        <p><strong>Apodo:</strong> Pommi</p>
+    </div>
+    
+    <h2>Lo que yo hice a puro papel y lapiz</h2>
+    <div class="card">
+        <h3>Cadena</h3>
+        <p>Explora las funcionalidades relacionadas con cadenas de texto.</p>
+    </div>
+    <div class="card">
+        <h3>Lista de Enteros</h3>
+        <p>Trabaja con listas de números enteros y sus operaciones.</p>
+    </div>
+    <div class="card">
+        <h3>Entero</h3>
+        <p>Aprende sobre los distintos tipos de enteros y sus aplicaciones.</p>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2024 Pommi</p>
+</footer>
+
+</body>
+</html>

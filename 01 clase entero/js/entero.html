@@ -3,80 +3,179 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clase entero</title>
+    <title>Interfaz Entero</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f0f0f0;
-            text-align: center;
-            margin-top: 100px;
-        }
-
-        .calculator {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            display: inline-block;
+            font-family: Arial, sans-serif;
+            background-color: rgb(230, 230, 250);
+            color: rgb(50, 50, 50);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            transition: background-color 0.5s ease;
         }
 
         h1 {
-            color: #333;
+            color: rgb(70, 130, 180);
+        }
+
+        .container {
+            background-color: rgb(255, 255, 255);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+
+        .container:hover {
+            transform: scale(1.05);
         }
 
         input[type="number"] {
             padding: 10px;
-            font-size: 18px;
-            width: 80%;
-            margin: 10px 0;
-            border: 2px solid #ddd;
+            border: 2px solid rgb(70, 130, 180);
             border-radius: 5px;
+            margin-bottom: 10px;
+            width: 100%;
         }
 
         button {
-            padding: 10px 20px;
-            margin: 10px;
-            font-size: 18px;
+            background-color: rgb(70, 130, 180);
+            color: white;
             border: none;
             border-radius: 5px;
+            padding: 10px;
             cursor: pointer;
             transition: background-color 0.3s;
+            width: 100%;
         }
-
-        button.suma { background-color: #4CAF50; color: white; }
-        button.resta { background-color: #FF5722; color: white; }
-        button.multiplicacion { background-color: #FFC107; color: white; }
-        button.division { background-color: #2196F3; color: white; }
 
         button:hover {
-            opacity: 0.8;
+            background-color: rgb(100, 149, 237);
         }
 
-        #result {
+        #resultado {
             margin-top: 20px;
-            font-size: 22px;
-            color: #333;
+            font-size: 1.2em;
+            color: rgb(255, 69, 0);
         }
     </style>
 </head>
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interfaz de Número Entero</title>
-    <!-- Incluir Bootstrap CSS desde un CDN -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Estilos adicionales opcionales -->
-    <style>
-        .container {
-            margin-top: 50px;
+<body>
+    <div class="container">
+        <h1>Clase Entero</h1>
+        <input type="number" id="numeroInput" placeholder="Introduce un número" />
+        <button onclick="procesarNumero('incrementar')">Incrementar</button>
+        <button onclick="procesarNumero('decrementar')">Decrementar</button>
+        <button onclick="mostrarResultados()">Mostrar Resultados</button>
+        <div id="resultado"></div>
+    </div>
+
+    <script>
+        class Entero {
+            constructor(Numero) {
+                this.Num = Numero;
+            }
+
+            setNum() {
+                const input = document.getElementById("numeroInput");
+                this.Num = parseInt(input.value, 10);
+            }
+
+            getNum() {
+                return this.Num;
+            }
+
+            showNum() {
+                const resultadoDiv = document.getElementById('resultado');
+                resultadoDiv.textContent = this.getNum();
+            }
+
+            IncrementarNum() {
+                this.Num += 1;
+            }
+
+            DecrementarNum() {
+                this.Num -= 1;
+            }
+
+            esParImpar() {
+                return (this.Num % 2 === 0) ? "Es par" : "Es impar";
+            }
+
+            esPositivoNegativo() {
+                if (this.Num > 0) {
+                    return "Es positivo";
+                } else if (this.Num < 0) {
+                    return "Es negativo";
+                } else {
+                    return "Es cero";
+                }
+            }
+
+            esPerfecto() {
+                let suma = 0;
+                for (let i = 1; i < this.Num; i++) {
+                    if (this.Num % i === 0) {
+                        suma += i;
+                    }
+                }
+                return suma === this.Num ? "Es un número perfecto" : "No es un número perfecto";
+            }
+
+            factorial() {
+                let factorial = 1;
+                for (let i = 1; i <= this.Num; i++) {
+                    factorial *= i;
+                }
+                return factorial;
+            }
+
+            Fibonacci() {
+                let n = this.Num;
+                if (n <= 0) return [];
+                let fibSecuencia = [];
+                let a = 0, b = 1;
+                for (let i = 0; i < n; i++) {
+                    fibSecuencia.push(a);
+                    [a, b] = [b, a + b];
+                }
+                return fibSecuencia;
+            }
         }
-        .btn-custom {
-            margin: 5px;
+
+        let entero;
+
+        function procesarNumero(accion) {
+            if (!entero) {
+                entero = new Entero(0);
+            }
+            entero.setNum();
+            if (accion === 'incrementar') {
+                entero.IncrementarNum();
+            } else if (accion === 'decrementar') {
+                entero.DecrementarNum();
+            }
         }
-    </style>
-</head>
+
+        function mostrarResultados() {
+            const resultadoDiv = document.getElementById('resultado');
+            const resultados = `
+                Número: ${entero.getNum()}<br>
+                ${entero.esParImpar()}<br>
+                ${entero.esPositivoNegativo()}<br>
+                ${entero.esPerfecto()}<br>
+                Factorial: ${entero.factorial()}<br>
+                Fibonacci: ${entero.Fibonacci().join(', ')}
+            `;
+            resultadoDiv.innerHTML = resultados;
+        }
+    </script>
+</body>
+</html>
+
 <body>
     <div class="container">
         <h1 class="text-center">Operaciones con Número Entero</h1>

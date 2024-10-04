@@ -62,62 +62,22 @@
         }
     </style>
 </head>
-<body>
-    <div class="container">
-        <h1>Gestor de Lista de Enteros</h1>
-        <input type="number" id="numeroInput" placeholder="Agregar un número" />
-        <button id="agregarBtn">Agregar</button>
-        <h5>
-        <button id="EliminarBtn">Eliminar</button></h5>
-        <h5>
-        <button id="BuscarLosDatos">Buscar</button></h5>
-        <h5>
-        <button id="OrdenarDato">Ordenar</button></h5>
-        <h2>Lista de Números</h2>
-        <ul id="listaNumeros"></ul>
-    </div>
-    <script>
-        class ListaEnteros {
-            constructor() {
-                this.lista = [];
-            }
+<!DOCTYPE html>
+<html lang="es">
+    <body>
 
-            agregar(valor) {
-                this.lista.push(valor);
-            }
-        }
-
-        const listaEnteros = new ListaEnteros();
-        const input = document.getElementById('numeroInput');
-        const agregarBtn = document.getElementById('agregarBtn');
-        const listaNumeros = document.getElementById('listaNumeros');
-        const eliminarBtn = document.getElementById('EliminarBtn');
-        const BuscarUnDato = document.getElementById('BuscarlosDatos');
-        const OrdenarDato = document.getElementById('OrdenarDato');
-
-        agregarBtn.addEventListener('click', () => {
-            const valor = parseInt(input.value);
-            if (!isNaN(valor)) {
-                listaEnteros.agregar(valor);
-                mostrarLista();
-                input.value = '';
-            } else {
-                alert('Por favor, ingresa un número válido.');
-            }
-        });
-
-        function mostrarLista() {
-            listaNumeros.innerHTML = '';
-            listaEnteros.lista.forEach(num => {
-                const li = document.createElement('li');
-                li.textContent = num;
-                listaNumeros.appendChild(li);
-            });
-        }
-    </script>
-    <script src="lista-enteros.js"></script>
-</body>
-</html>
-
-
-
+        <div class="container">
+            <h2>Lista de Enteros</h2>
+            <input type="number" id="valor" placeholder="Ingrese un número entero">
+            <button onclick="agregarEntero()">Agregar</button>
+            <button onclick="eliminarEntero()">Eliminar</button>
+            <button onclick="buscarEntero()">Buscar</button>
+            <button onclick="ordenarLista()">Ordenar</button>
+            <div class="result" id="resultado"></div>
+        </div>
+        
+        <!-- Vincular el archivo JavaScript -->
+        <script src="lista-enteros.js"></script>
+        
+        </body>
+        </html>

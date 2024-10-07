@@ -42,7 +42,7 @@ listaCadenas.agregar('Mundo');
 listaCadenas.agregar('UCB');
 
 //Retornar la cadena con mayor caracteres
-
+/*
 //var = let
 //------------------------------------Hola
 var a = listaCadenas.lista[0]
@@ -81,9 +81,32 @@ if(cCent > mayor) {
 //-------
 console.log("La mayor cantidad de caracteres tiene: " + mayor);
 console.log("La cadena con mayor cantidad de caracteres es: " + listaCadenas.lista[posicion])
-
+*/
 
 //realizar el mismo ejercicio utilizando un for 
+// var = let
+//------------------------------------
+let mayor = 0;
+let posicion = -1;
+
+// Iteramos sobre listaCadenas.lista
+for (let i = 0; i < listaCadenas.lista.length; i++) {
+    let cadena = listaCadenas.lista[i];
+    let longitud = cadena.length;
+    
+    console.log(cadena);
+    console.log(longitud);
+
+    // Verificamos si es la mayor longitud
+    if (longitud > mayor) {
+        mayor = longitud;
+        posicion = i;
+    }
+}
+
+// Mostramos el resultado
+console.log("La mayor cantidad de caracteres tiene: " + mayor);
+console.log("La cadena con mayor cantidad de caracteres es: " + listaCadenas.lista[posicion]);
 
 
 console.log(listaCadenas.lista); // Imprime: ['Hola', 'Mundo', 'UCB']

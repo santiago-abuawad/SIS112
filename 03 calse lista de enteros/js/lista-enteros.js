@@ -1,109 +1,61 @@
-class listaEnteros {
+class ListaEnteros {
     constructor() {
         this.lista = [];
     }
 
     agregar(valor) {
-        this.lista.push(parseInt(valor)); // Convertir a número entero
+        this.lista.push(valor);
     }
 
     eliminar(valor) {
-        const index = this.lista.indexOf(parseInt(valor)); // Convertir a número entero
+        const index = this.lista.indexOf(valor);
         if (index !== -1) {
             this.lista.splice(index, 1);
         }
     }
 
     buscar(valor) {
-        return this.lista.indexOf(parseInt(valor)); // Convertir a número entero
+        return this.lista.indexOf(valor);
     }
 
     ordenar() {
-        this.lista.sort((a, b) => a - b);
+        this.lista.sort((a, b) => a - b); // Orden ascendente
     }
 }
 
-// Crear una instancia de listaEnteros
-let miLista = new listaEnteros();
-miLista.agregar(21);
-miLista.agregar(12);
-miLista.agregar(15);
-miLista.agregar(30);
+let miLista = new ListaEnteros();
 
-// Mostrar el tercer elemento en la lista
-var a = miLista.lista[0];
-console.log(a); 
-
-var b = miLista.lista[1];
-console.log(b); 
-
-var c = miLista.lista[2];
-console.log(c); 
-
-var d = miLista.lista[3];
-console.log(d); 
-
-var datoMenor = -1;
-/*
-var a = miLista.lista[0];
-if(a > datoMenor){
-    datoMenor = a;
+function actualizarResultado() {
+    document.getElementById('result').innerHTML = `Resultado: [ ${miLista.lista.join(', ')} ]`;
 }
-console.log("Dato Menor: " + datoMenor);
 
-var b = miLista.lista[1];
-if(a > b){
-    datoMenor = b;
-}
-console.log("Dato Menor: " + datoMenor);
-
-var c = miLista.lista[2];
-if(b > c){
-    datoMenor = c;
-}
-console.log("Dato Menor: " + datoMenor);
-
-var d = miLista.lista[3];
-if(c > d){
-    datoMenor = d;
-}
-console.log("Dato Menor: " + datoMenor);
-*/
-var datoMenor = miLista.lista[0]; // Asumimos que el primer elemento es el menor inicialmente
-
-for (let i = 1; i < miLista.lista.length; i++) {
-    if (miLista.lista[i] < datoMenor) {
-        datoMenor = miLista.lista[i];
-    }
-    console.log("Dato Menor: " + datoMenor);
-}
-// Función para agregar enteros a la lista y mostrarla
-function agregarEntero(valor) {
+function agregar() {
+    const valor = parseInt(document.getElementById('inputValor').value);
     if (!isNaN(valor)) {
         miLista.agregar(valor);
-        console.log('Lista actualizada:', miLista.lista);
-    } else {
-        console.log('Por favor, ingrese un número válido.');
+        actualizarResultado();
+        document.getElementById('inputValor').value = ''; // Limpiar input
     }
 }
 
-// Función para buscar un entero en la lista
-function buscarEntero(valor) {
-    const index = miLista.buscar(valor);
-    if (index !== -1) {
-        console.log(valor + ' se encuentra en la posición: ' + index);
-    } else {
-        console.log(valor + ' no se encuentra en la lista.');
+function eliminar() {
+    const valor = parseInt(document.getElementById('inputValor').value);
+    if (!isNaN(valor)) {
+        miLista.eliminar(valor);
+        actualizarResultado();
+        document.getElementById('inputValor').value = ''; // Limpiar input
     }
 }
 
-// Función para ordenar la lista
-function ordenarLista() {
+function buscar() {
+    const valor = parseInt(document.getElementById('inputValor').value);
+    if (!isNaN(valor)) {
+        const index = miLista.buscar(valor);
+        alert(index !== -1 ? `El número ${valor} está en la posición ${index}` : `${valor} no se encuentra en la lista.`);
+    }
+}
+
+function ordenar() {
     miLista.ordenar();
-    console.log('Lista ordenada:', miLista.lista);
+    actualizarResultado();
 }
-
-// Ejemplo de uso en la consola
-agregarEntero(45); // Agregar un número
-buscarEntero(12);  // Buscar un número
-ordenarLista();    // Ordenar la lista

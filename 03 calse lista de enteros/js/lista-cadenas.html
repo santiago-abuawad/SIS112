@@ -25,7 +25,7 @@
 
         h1 {
             text-align: center;
-            color: #00FF00; /* Verde */
+            color: #15cc61; /* Verde */
         }
 
         .input {
@@ -34,7 +34,7 @@
             margin-bottom: 10px;
             border: 2px solid #00FF00;
             border-radius: 5px;
-            background-color: rgba(255, 255, 255, 0.2);
+            background-color: rgb(23, 139, 101);
             color: white;
         }
 
@@ -79,7 +79,7 @@
 
         .btn:hover {
             color: #fff;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+            box-shadow: 0 0 10px rgba(241, 241, 241, 0.7);
         }
 
         .lista {
@@ -95,105 +95,33 @@
         }
     </style>
 </head>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Cadenas</title>
+</head>
 <body>
     <div class="container">
-        <h1>Gestor de Cadenas</h1>
-        <input type="text" id="cadenaInput" placeholder="Ingresa texto" class="input">
-        <div class="buttons">
-            <button id="agregarBtn" class="btn">Agregar</button>
-            <button id="EliminarBtn" class="btn">Eliminar</button>
-            <button id="BuscarlosDatos" class="btn">Buscar</button>
-            <button id="OrdenarDato" class="btn">Ordenar</button>
+        <h1>Gestor de Lista de Cadenas</h1>
+        <input type="text" id="inputValor" placeholder="Agregar cadena..." />
+        <button id="btnAgregar">Agregar</button>
+        
+        <div class="lista-container">
+            <h2>Lista de Cadenas</h2>
+            <ul id="listaCadenas"></ul>
         </div>
-        <ul id="listaCadenas" class="lista"></ul>
+        
+        <input type="text" id="inputBuscar" placeholder="Buscar cadena..." />
+        <button id="btnBuscar">Buscar</button>
+        
+        <input type="text" id="inputEliminar" placeholder="Eliminar cadena..." />
+        <button id="btnEliminar">Eliminar</button>
+        
+        <button id="btnOrdenar">Ordenar</button>
     </div>
 
-    <script>
-        class ListaCadenas {
-            constructor() {
-                this.lista = [];
-            }
-
-            agregar(valor) {
-                this.lista.push(valor);
-            }
-
-            eliminar(valor) {
-                const index = this.lista.indexOf(valor);
-                if (index !== -1) {
-                    this.lista.splice(index, 1);
-                }
-            }
-
-            buscar(valor) {
-                return this.lista.indexOf(valor);
-            }
-
-            ordenar() {
-                this.lista.sort(); // Ordena alfabéticamente
-            }
-        }
-
-        const listaCadenas = new ListaCadenas();
-        const input = document.getElementById('cadenaInput');
-        const agregarBtn = document.getElementById('agregarBtn');
-        const listaCadenasElement = document.getElementById('listaCadenas');
-        const eliminarBtn = document.getElementById('EliminarBtn');
-        const buscarBtn = document.getElementById('BuscarlosDatos');
-        const ordenarBtn = document.getElementById('OrdenarDato');
-
-        agregarBtn.addEventListener('click', () => {
-            const valor = input.value.trim();
-            if (valor) {
-                listaCadenas.agregar(valor);
-                mostrarLista();
-                input.value = '';
-            } else {
-                alert('Por favor, ingresa un texto válido.');
-            }
-        });
-
-        eliminarBtn.addEventListener('click', () => {
-            const valor = input.value.trim();
-            if (valor) {
-                listaCadenas.eliminar(valor);
-                mostrarLista();
-                input.value = '';
-            } else {
-                alert('Por favor, ingresa un texto válido.');
-            }
-        });
-
-        buscarBtn.addEventListener('click', () => {
-            const valor = input.value.trim();
-            if (valor) {
-                const index = listaCadenas.buscar(valor);
-                if (index !== -1) {
-                    alert(`Texto encontrado en la posición: ${index}`);
-                } else {
-                    alert('Texto no encontrado.');
-                }
-                input.value = '';
-            } else {
-                alert('Por favor, ingresa un texto válido.');
-            }
-        });
-
-        ordenarBtn.addEventListener('click', () => {
-            listaCadenas.ordenar();
-            mostrarLista();
-        });
-
-        function mostrarLista() {
-            listaCadenasElement.innerHTML = '';
-            listaCadenas.lista.forEach(cadena => {
-                const li = document.createElement('li');
-                li.textContent = cadena;
-                listaCadenasElement.appendChild(li);
-            });
-        }
-    </script> 
     <script src="lista-cadenas.js"></script>
-        
 </body>
 </html>

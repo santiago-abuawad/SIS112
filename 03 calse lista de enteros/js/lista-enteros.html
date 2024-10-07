@@ -63,21 +63,35 @@
     </style>
 </head>
 <!DOCTYPE html>
-<html lang="es">
-    <body>
+<body>
 
-        <div class="container">
-            <h2>Lista de Enteros</h2>
-            <input type="number" id="valor" placeholder="Ingrese un número entero">
-            <button onclick="agregarEntero()">Agregar</button>
-            <button onclick="eliminarEntero()">Eliminar</button>
-            <button onclick="buscarEntero()">Buscar</button>
-            <button onclick="ordenarLista()">Ordenar</button>
-            <div class="result" id="resultado"></div>
-        </div>
+    <div class="stars">
+        <!-- Generamos varias estrellas con distintas posiciones -->
+        <div class="star" style="top: 10%; left: 20%;"></div>
+        <div class="star" style="top: 40%; left: 30%;"></div>
+        <div class="star" style="top: 60%; left: 50%;"></div>
+        <div class="star" style="top: 70%; left: 70%;"></div>
+        <div class="star" style="top: 30%; left: 80%;"></div>
+        <div class="star" style="top: 50%; left: 90%;"></div>
+        <div class="star" style="top: 20%; left: 40%;"></div>
+        <div class="star" style="top: 80%; left: 60%;"></div>
         
-        <!-- Vincular el archivo JavaScript -->
-        <script src="lista-enteros.js"></script>
-        
-    </body>
+       
+    </div>
+
+    <h1>Gestión de Lista de Enteros</h1>
+    
+    <input type="number" id="inputValor" placeholder="Ingresa un número" />
+    <button onclick="agregar()">Agregar</button>
+    <button onclick="eliminar()">Eliminar</button>
+    <button onclick="buscar()">Buscar</button>
+    <button onclick="ordenar()">Ordenar</button>
+    
+    <div class="resultado">
+        <h2 id="result">Resultado: [ ]</h2>
+    </div>
+
+    <script defer src="lista-enteros.js"></script>
+
+</body>
 </html>

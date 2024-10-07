@@ -53,4 +53,5 @@ function mostrarLista() {
 let miLista = new ListaCadenas();
 miLista.agregar("Hola");
 miLista.agregar("Mundo");
+miLista.agregar("UCB");
 console.log(miLista.lista); // Imprime: ["Hola", "Mundo"]

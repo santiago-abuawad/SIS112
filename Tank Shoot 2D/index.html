@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Battle Tanks Retro 2D</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #0d0d0d;
+            color: #ffffff;
+            font-family: 'Press Start 2P', cursive; /* Fuente estilo retro */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+        .container {
+            text-align: center;
+            max-width: 600px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #00ff00; /* Verde brillante estilo retro */
+            text-shadow: 2px 2px 0px #ff00ff, 4px 4px 0px #00ffff; /* Sombras de colores tipo neón */
+        }
+
+        p {
+            font-size: 1rem;
+            margin-bottom: 30px;
+            color: #cccccc;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #ff00ff;
+            color: #ffffff;
+            border: 3px solid #00ff00;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+            font-family: 'Press Start 2P', cursive;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            text-transform: uppercase;
+        }
+
+        .btn:hover {
+            background-color: #00ffff;
+            border-color: #ff00ff;
+        }
+
+        .tanks {
+            margin-top: 50px;
+        }
+
+        .tank {
+            width: 60px;
+            height: 60px;
+            background-color: #ff00ff;
+            display: inline-block;
+            margin: 10px;
+            position: relative;
+            border: 3px solid #00ff00;
+            transform: rotate(45deg);
+            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .tank:before {
+            content: '';
+            width: 45px;
+            height: 15px;
+            background-color: #00ffff;
+            position: absolute;
+            top: 15px;
+            left: 7px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Battle Tanks 2D</h1>
+        <p>¡Bienvenido a la batalla definitiva de tanques 2D! Prepárate para una experiencia llena de estrategia y acción.</p>
+        <a href="#" class="btn">¡Comenzar!</a>
+
+        <div class="tanks">
+            <div class="tank"></div>
+            <div class="tank"></div>
+            <div class="tank"></div>
+        </div>
+    </div>
+
+</body>
+</html>
+

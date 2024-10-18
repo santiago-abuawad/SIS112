@@ -13,7 +13,7 @@
         }
 
         body {
-            background-color: #0d0d0d;
+            background-color: #1a1a1a;
             color: #ffffff;
             font-family: 'Press Start 2P', cursive; /* Fuente estilo retro */
             display: flex;
@@ -32,8 +32,8 @@
         h1 {
             font-size: 3rem;
             margin-bottom: 20px;
-            color: #00ff00; /* Verde brillante estilo retro */
-            text-shadow: 2px 2px 0px #ff00ff, 4px 4px 0px #00ffff; /* Sombras de colores tipo neón */
+            color: #ffcc00; /* Amarillo brillante */
+            text-shadow: 3px 3px 0px #ff3366, 6px 6px 0px #66ccff; /* Sombras cuadradas */
         }
 
         p {
@@ -45,46 +45,21 @@
         .btn {
             display: inline-block;
             padding: 15px 30px;
-            background-color: #ff00ff;
+            background-color: #66ccff;
             color: #ffffff;
-            border: 3px solid #00ff00;
+            border: 3px solid #ff3366;
             text-decoration: none;
             font-size: 1rem;
             transition: background-color 0.3s ease;
             font-family: 'Press Start 2P', cursive;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
             text-transform: uppercase;
+            border-radius: 8px; /* Botón cuadrado */
         }
 
         .btn:hover {
-            background-color: #00ffff;
-            border-color: #ff00ff;
-        }
-
-        .tanks {
-            margin-top: 50px;
-        }
-
-        .tank {
-            width: 60px;
-            height: 60px;
-            background-color: #ff00ff;
-            display: inline-block;
-            margin: 10px;
-            position: relative;
-            border: 3px solid #00ff00;
-            transform: rotate(45deg);
-            box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
-        }
-
-        .tank:before {
-            content: '';
-            width: 45px;
-            height: 15px;
-            background-color: #00ffff;
-            position: absolute;
-            top: 15px;
-            left: 7px;
+            background-color: #ff3366;
+            border-color: #66ccff;
         }
     </style>
 </head>
@@ -92,16 +67,11 @@
 
     <div class="container">
         <h1>Battle Tanks 2D</h1>
-        <p>¡Bienvenido a la batalla definitiva de tanques 2D! Prepárate para una experiencia llena de estrategia y acción.</p>
+        <p>¡Revive la emoción de los juegos retro y domina el campo de batalla!</p>
         <a href="#" class="btn">¡Comenzar!</a>
-
-        <div class="tanks">
-            <div class="tank"></div>
-            <div class="tank"></div>
-            <div class="tank"></div>
-        </div>
     </div>
 
 </body>
 </html>
+
 

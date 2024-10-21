@@ -23,7 +23,7 @@ class EnemyTank{
     moveUp(){
 
     }
-
+ 
     moveDown(){
 
 
@@ -35,4 +35,4 @@ class EnemyTank{
     }
     
 
-}
+} 

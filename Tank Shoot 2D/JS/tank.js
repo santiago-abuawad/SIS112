@@ -15,7 +15,7 @@ class Tank{
     moveLeft(){
 
     }
-
+ 
     moveRight(){
 
     }

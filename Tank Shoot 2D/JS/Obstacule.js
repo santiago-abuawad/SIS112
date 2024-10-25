@@ -1,3 +1,4 @@
+//clase de todos los objetos q aparezcan el juego 
 class Obstacule{
     nombre;
     src;

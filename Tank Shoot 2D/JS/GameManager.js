@@ -1,3 +1,4 @@
+//Todo lo logistico q tendria el juego con respecto al jugador
 class GameManager{
     puntuacion;
     nivelActual;

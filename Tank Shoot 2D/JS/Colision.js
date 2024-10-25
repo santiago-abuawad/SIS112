@@ -1,3 +1,4 @@
+//Cuando chocan los objetos entre si
 class Colision{
     posX;
     posY;

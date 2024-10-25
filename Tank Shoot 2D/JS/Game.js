@@ -1,3 +1,4 @@
+//Todo lo basico que tiene el juego
 class Game{
     ancho;
     alto;

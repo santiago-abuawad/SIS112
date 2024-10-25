@@ -1,3 +1,4 @@
+//clase de disparo q tendria los proyectiles del juego
 class Shoot{
     posX;
     posY;

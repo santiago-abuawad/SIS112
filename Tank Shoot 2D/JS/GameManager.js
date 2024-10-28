@@ -14,7 +14,7 @@ class GameManager{
 
     }
     updateScore(){
-
+ 
     }
     nextLevel(){
         

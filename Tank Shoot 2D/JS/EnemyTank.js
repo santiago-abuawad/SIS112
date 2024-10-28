@@ -18,7 +18,7 @@ class EnemyTank{
         this.altoMapa = _altoMapa;
     }
 
-
+ 
     moveLeft(){
         if (this.posX - this.velocidad >= 0) //verificamos el limite izquierdo
             this.posX =  this.posX - this.velocidad;
@@ -45,6 +45,10 @@ class EnemyTank{
     rotarTank(_direccionDisparo){
         this.direcciónDisparo = _direccionDisparo;
     }
-    
+    drawEnemyTank(ctx) {
+        ctx.fillStyle ='blue';
+        //Represetamos el tanque enemigo como un cuadrado
+        ctx.fillRect(this.posX, this.posY, 50, 50);
+    }
 
 } 

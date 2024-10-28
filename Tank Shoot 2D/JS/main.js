@@ -7,8 +7,11 @@ function resizeCanvas(){
     canvas.width = window.innerWidth * 0.9; //el juego esta al 90% de la pantalla del jugador
     canvas.height = window.innerHeight * 0.9;
     
-    canvas.width = Math.round(canvas.width / 50) * 50;
-    canvas.height = Math.round(canvas.height / 50) * 50;
+    /*canvas.width = Math.round(canvas.width / 50) * 50;
+    canvas.height = Math.round(canvas.height / 50) * 50;*/
+
+    canvas.width = Utils.RoundTablero(canvas.width); 
+    canvas.height = Utils.RoundTablero(canvas.height); 
     /*console.log('width', canvas.width)
     console.log('height', canvas.height)*/
 }

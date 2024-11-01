@@ -151,10 +151,40 @@ function drawEscenario(ctx, escenario) {
     }
 }
 
+const mapa = [
+    [1, 0, 1, 0, 1],
+    [1, 0, 0,0,1]
+];
+
+function DibujarCero(){
+    ctx.fillStyle = "orange";
+    ctx.fillRect(x, y, game.anchoCelda, game.altoCelda);
+}
+
+function DibujarUno(ctx){
+    ctx.fillStyle = "blue";
+    ctx.fillRect(x, y, game.anchoCelda, game.altoCelda);
+}
+
+function DibujarMapa(ctx, mapa){
+    for (let row = 0; row < mapa.length; row++) {
+        for (let col = 0; col < mapa[row].length; col++) {
+            const cell = mapa[row] [col];
+            console.log(cell);
+            
+        }
+    }
+}
+
+
+
 //Logica del juego(actualizacion a la pantalla)
 function updateGame(){
     //Limpiamos el canvas en cada frame
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    //drawEscenario(ctx, escenario); // Dibujamos el escenario en el canva
+    DibujarMapa(ctx, mapa);
 
     drawEscenario(ctx, escenario); //dibujamos al escenario en el canvas
     //drawTank(playertank);
